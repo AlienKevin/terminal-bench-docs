@@ -57,6 +57,15 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col">
+        {/* On the standalone harbor-index.org host, tag <html> so the CSS below
+            drops the terminal-bench top nav. Runs before the nav paints (no flash);
+            ?standalone lets us preview it on any host. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var h=location.hostname;if(h==='harbor-index.org'||h.endsWith('.harbor-index.org')||location.search.indexOf('standalone')>-1){document.documentElement.setAttribute('data-standalone','')}}catch(e){}",
+          }}
+        />
         <QueryProvider>
           <RootProvider>
             <NuqsAdapter>{children}</NuqsAdapter>

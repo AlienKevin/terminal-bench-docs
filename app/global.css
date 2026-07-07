@@ -220,3 +220,13 @@
   --diff-gutter-delete-text-color: #9ea7b3;
   --diff-omit-gutter-line-color: #30363d;
 }
+
+/* Standalone harbor-index.org: drop the terminal-bench top nav and reclaim the
+   space its fixed bar reserved (pt-14 on the home layout). Gated on the
+   data-standalone attribute set for that host in app/layout.tsx. */
+html[data-standalone] #nd-nav {
+  display: none !important;
+}
+html[data-standalone] #nd-home-layout {
+  padding-top: 0 !important;
+}
