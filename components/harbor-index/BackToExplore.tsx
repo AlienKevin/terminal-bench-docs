@@ -19,7 +19,7 @@ export default function BackToExplore({
 }) {
   return (
     <a
-      href="/news/harbor-index#explore-harbor-index"
+      href="/blog/harbor-index#explore-harbor-index"
       className={className}
       style={style}
       onClick={(e) => {

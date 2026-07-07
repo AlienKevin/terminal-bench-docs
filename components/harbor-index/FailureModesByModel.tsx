@@ -32,7 +32,7 @@ const FAMILY_DEF: Record<FamilyKey, string> = {
 };
 
 function rolloutHref(id: string) {
-  return `/harbor-index/${encodeURIComponent(id)}/`;
+  return `/data/v1/trials/${encodeURIComponent(id)}/`;
 }
 
 export default function FailureModesByModel() {

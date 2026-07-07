@@ -141,7 +141,7 @@ Running each model on both its native harness and terminus-2 splits its solves i
 
 ### Native harnesses are leaner and more reliable
 
-Across all nine models, each model's own native CLI reaches its result far more economically than the cross-vendor terminus-2 harness. Matched task by task, native makes about a third fewer tool calls and generates over 40% fewer output tokens per rollout, and it runs out the clock far less often, timing out on 26% of runs against terminus-2's 42%. The biggest driver is terminus-2's bash-only action space: without a native CLI's image-reading and web-search tools, models grind through [OCR loops](/harbor-index/labbench-habenula-fluorescence-c__tcEBZiN) and [hand-written scrapers](/harbor-index/gaia-find-flavor-graveyard-rhyme__7it4zPQ) that never converge. The leaner run costs nothing in capability: on the open models the two harnesses tie on solves (28 vs 26), and on the frontier, where the native CLIs are more tuned, native pulls ahead (43 vs 37).
+Across all nine models, each model's own native CLI reaches its result far more economically than the cross-vendor terminus-2 harness. Matched task by task, native makes about a third fewer tool calls and generates over 40% fewer output tokens per rollout, and it runs out the clock far less often, timing out on 26% of runs against terminus-2's 42%. The biggest driver is terminus-2's bash-only action space: without a native CLI's image-reading and web-search tools, models grind through [OCR loops](/data/v1/trials/labbench-habenula-fluorescence-c__tcEBZiN) and [hand-written scrapers](/data/v1/trials/gaia-find-flavor-graveyard-rhyme__7it4zPQ) that never converge. The leaner run costs nothing in capability: on the open models the two harnesses tie on solves (28 vs 26), and on the frontier, where the native CLIs are more tuned, native pulls ahead (43 vs 37).
 
 <HarnessComparison />
 
@@ -179,7 +179,7 @@ We sincerely appreciate our funding partners for supporting Harbor-Index and pro
 - **Sandbox providers:** [Daytona](https://www.daytona.io), [Modal](https://modal.com)
 - **Other partners:** [Laude Institute](https://www.laude.org), [2077AI](https://www.2077ai.com/), [UniPat AI](https://www.unipat.ai)
 
-We thank everyone who contributed to building Harbor-Index; the full list is on the [Harbor-Index Contributors](/contributors/harbor-index) page.
+We thank everyone who contributed to building Harbor-Index; the full list is on the [Harbor-Index Contributors](/contributors/v1) page.
 
 Special thanks to [Ryan Marten](https://github.com/ryanmarten), [Alex Shaw](https://github.com/alexgshaw), and [Saul Fuhrmann](https://github.com/frmsaul) for their feedback on earlier versions of this blog.
 
@@ -228,7 +228,7 @@ If you find Harbor-Index useful in your research, please cite:
   title        = {Introducing Harbor-Index: A Compact, Diverse, Challenging, and High-Quality Benchmark for Agentic Evaluation},
   author       = {Shi, Lin and Lin, Haowei and Zhu, Zixuan and Zhou, Xiaoyue and Li, Xiang},
   year         = {2026},
-  howpublished = {\url{https://www.tbench.ai/news/harbor-index}},
+  howpublished = {\url{https://harbor-index.org/blog/harbor-index}},
   note         = {Terminal-Bench blog}
 }
 ```

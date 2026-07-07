@@ -182,7 +182,7 @@ export default function DataDashboard() {
                     <td className="hidden py-1.5 pr-3 font-mono sm:table-cell" style={{ color: CHROME.text }}>{t.model}</td>
                     <td className="hidden py-1.5 pr-3 font-mono sm:table-cell" style={{ color: CHROME.muted }}>{t.harness}</td>
                     <td className="w-full max-w-0 py-1.5 pr-3 sm:w-auto sm:max-w-none">
-                      <a href={`/harbor-index/${encodeURIComponent(t.id)}/`} className="block truncate font-mono hover:underline sm:inline sm:whitespace-normal" style={{ color: CHROME.accentHover }}>{t.task}</a>
+                      <a href={`/data/v1/trials/${encodeURIComponent(t.id)}/`} className="block truncate font-mono hover:underline sm:inline sm:whitespace-normal" style={{ color: CHROME.accentHover }}>{t.task}</a>
                       <span className="block truncate font-mono text-[0.65rem] sm:hidden" style={{ color: CHROME.muted }}>{t.model} · {t.harness}</span>
                     </td>
                     <td className="hidden py-1.5 pr-3 font-mono md:table-cell" style={{ color: CHROME.muted }}>{t.benchmark}</td>
@@ -217,7 +217,7 @@ export default function DataDashboard() {
               {tShown.map((t) => (
                 <tr key={t.task} className="border-t hover:bg-muted" style={{ borderColor: CHROME.border }}>
                   <td className="w-full max-w-0 py-1.5 pr-3 sm:w-auto sm:max-w-none">
-                    <a href={`/harbor-index/task/${encodeURIComponent(t.task)}/`} className="block truncate text-left font-mono hover:underline sm:inline sm:whitespace-normal" style={{ color: CHROME.accentHover }}>{t.task}</a>
+                    <a href={`/data/v1/tasks/${encodeURIComponent(t.task)}/`} className="block truncate text-left font-mono hover:underline sm:inline sm:whitespace-normal" style={{ color: CHROME.accentHover }}>{t.task}</a>
                     <span className="block font-mono text-[0.65rem] sm:hidden" style={{ color: CHROME.muted }}>{t.benchmark}</span>
                   </td>
                   <td className="hidden py-1.5 pr-3 font-mono sm:table-cell" style={{ color: CHROME.muted }}>{t.benchmark}</td>

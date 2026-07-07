@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from "next/server";
 // (harbor-index.vercel.app, tbench.ai, previews) gets the same target as a
 // normal redirect. This lives in middleware rather than next.config because
 // Vercel's host-based `has`/`missing` matching on redirects proved unreliable.
-const BLOG = "/news/harbor-index";
+const BLOG = "/blog/harbor-index";
 
 export function middleware(req: NextRequest) {
   const host = req.headers.get("host") ?? "";
