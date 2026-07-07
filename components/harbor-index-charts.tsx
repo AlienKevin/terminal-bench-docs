@@ -164,7 +164,7 @@ const funnelStages: FunnelStage[] = [
     count: 1311,
   },
   {
-    label: "Stage 2 · Broken task pre-filter",
+    label: "Stage 2 · Broken task screen",
     detail: "LLM judge rejects broken tasks",
     count: 307,
   },
