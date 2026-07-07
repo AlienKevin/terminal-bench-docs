@@ -713,20 +713,20 @@ export default function AuditWorkbench({
         <a
           href={backHref}
           onClick={(e) => {
-            // If we arrived from within the app, use real browser back so the
-            // findings page is restored (scroll position + table state) from
-            // the back/forward cache instead of re-rendered from scratch.
-            // Direct or external landings fall back to the plain href.
-            let internal = false;
-            try {
-              internal = !!document.referrer && new URL(document.referrer).origin === window.location.origin;
-            } catch {}
-            if (internal) {
+            // Prefer real browser back whenever there's a previous page, so the
+            // reader returns to wherever they came from — the blog's Explore
+            // section (restored from the back/forward cache), or an external
+            // referrer like the Terminal-Bench docs. Only a direct or fresh-tab
+            // landing (no history) falls through to the plain href.
+            if (typeof window !== "undefined" && window.history.length > 1) {
               e.preventDefault();
-              // Flag the return so the findings table restores its view even
-              // when the back/forward cache is unavailable (e.g. local dev).
+              // When returning within the app, flag it so the findings table
+              // restores its view even when the bfcache is unavailable (e.g.
+              // local dev).
               try {
-                sessionStorage.setItem("hi-dashboard-restore", String(Date.now()));
+                if (document.referrer && new URL(document.referrer).origin === window.location.origin) {
+                  sessionStorage.setItem("hi-dashboard-restore", String(Date.now()));
+                }
               } catch {}
               window.history.back();
             }
