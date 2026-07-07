@@ -6,15 +6,12 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   async redirects() {
+    // Root routing ('/' -> '/news/harbor-index') now lives in middleware.ts: a
+    // rewrite on the harbor-index.org host so its URL stays clean, and a normal
+    // redirect on every other host. Keeping the literal '/news/harbor-index'
+    // string in this file also stops the deploy script from re-injecting a plain
+    // root redirect (which would run before the middleware).
     return [
-      // Root -> blog for every host EXCEPT harbor-index.org (which serves the
-      // blog at its own root via the rewrite below, keeping the URL clean).
-      {
-        source: '/',
-        destination: '/news/harbor-index',
-        permanent: false,
-        missing: [{ type: 'host', value: 'harbor-index\\.org' }],
-      },
       {
         source: '/registry',
         destination: '/benchmarks',
@@ -44,17 +41,6 @@ const config = {
         source: '/tasks',
         destination: '/benchmarks/terminal-bench-2',
         permanent: true,
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      // On harbor-index.org the blog is the home page: serve /news/harbor-index
-      // at the root without a redirect, so the URL stays https://harbor-index.org.
-      {
-        source: '/',
-        destination: '/news/harbor-index',
-        has: [{ type: 'host', value: 'harbor-index\\.org' }],
       },
     ];
   },
