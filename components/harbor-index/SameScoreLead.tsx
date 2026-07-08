@@ -1,6 +1,6 @@
 import React from "react";
 
-import hp from "@/lib/harness_pairs.json";
+import { harness_pairs as hp } from "@/lib/harbor-index-data.json";
 import RevealOnView from "./RevealOnView";
 import { CHROME, FAMILY, HARNESS } from "@/lib/report-colors";
 

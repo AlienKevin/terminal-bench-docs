@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 
-import failureModes from "@/lib/failure_modes_by_model.json";
+import { failure_modes_by_model as failureModes } from "@/lib/harbor-index-data.json";
 import { FAMILY, FAMILY_META, CODE_FAMILY, CHROME, type FamilyKey } from "@/lib/report-colors";
 import RevealOnView from "./RevealOnView";
 

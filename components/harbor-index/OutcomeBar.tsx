@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import outcomes from "@/lib/outcome_rollouts.json";
+import { outcome_rollouts as outcomes } from "@/lib/harbor-index-data.json";
 import { CHROME, FAMILY } from "@/lib/report-colors";
 import RevealOnView from "./RevealOnView";
 

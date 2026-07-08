@@ -1,6 +1,6 @@
 import React from "react";
 
-import nvt from "@/lib/native_vs_terminus.json";
+import { native_vs_terminus as nvt } from "@/lib/harbor-index-data.json";
 import { CHROME, HARNESS } from "@/lib/report-colors";
 import RevealOnView from "./RevealOnView";
 
